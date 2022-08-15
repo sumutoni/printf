@@ -2,12 +2,19 @@
 #define MAIN_H
 #include <stdarg.h>
 #define NULL ((void *)0)
-typedef struct specifier {
-  char s;
-  int (*point)(va_list);
-  int index;
+/**
+ * struct specifier - structure for specifier symbol, index in array,
+ * and function to print corresponding value
+ * @s: symbol of specifier
+ * @point: pointer to printing function
+ * @index: index in array
+ */
+typedef struct specifier
+{
+	char s;
+	int (*point)(va_list);
+	int index;
 } spec;
-
 int *search(const char *);
 void replace(const char *, va_list);
 int check_specifier(char c);

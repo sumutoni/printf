@@ -3,33 +3,58 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-int print_char(va_list list) {
-  char c;
-  size_t bytes;
-  c = va_arg(list, int);
-  bytes = write(1, &c, sizeof(c));
-  printf("%lu", bytes);
-  return bytes;
+/**
+ * print_char - prints a character to stdout
+ * @list: va_list holding arguments
+ *
+ * Return: 1 for number of char printed
+ */
+int print_char(va_list list)
+{
+	char c;
+	int count;
+
+	count = 0;
+	c = va_arg(list, int);
+	count = write(1, &c, 1);
+	printf("%d", count);
+	return (count);
 }
-int print_int(va_list list) {
-  int c;
-  size_t bytes;
-  // to revise
-  c = va_arg(list, int);
-  bytes = write(1, &c, sizeof(c));
-  printf("%lu", bytes);
-  return bytes;
+/**
+ * print_int - prints integer to stdout
+ * @list: va_list containing arguments
+ *
+ * Return: number of digits printed
+ */
+int print_int(va_list list)
+{
+	int c;
+	int count;
+
+	c = va_arg(list, int);
+	count = write(1, &c, 2);
+	printf("%d", count);
+	return (count);
 }
-int print_string(va_list list) {
-  char *string;
-  size_t bytes;
-  string = va_arg(list, char *);
-  if (!string) {
-    string = "null";
-    bytes = write(1, string, 5);
-  }
-  else
-    bytes = write(1, string, sizeof(string));
-  printf("%lu", bytes);
-  return bytes;
+/**
+ * print_string - prints string to stdout
+ * @list: va_list containing arguments
+ *
+ * Return: number of character printed
+ */
+int print_string(va_list list)
+{
+	char *string;
+	int count;
+
+	string = va_arg(list, char *);
+	if (!string)
+	{
+		string = "null";
+		count = write(1, string, 5);
+	}
+	else
+		count = write(1, string, sizeof(string));
+	printf("%d", count);
+	return (count);
 }
