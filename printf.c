@@ -18,9 +18,3 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (0);
 }
-int main(void)
-{
-	_printf("This %c char ", 'c');
-	/*printf("This %c char ", 'c');*/
-	return (0);
-}
