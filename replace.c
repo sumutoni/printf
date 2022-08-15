@@ -27,10 +27,9 @@ int get_size(const char *s)
  */
 void replace(const char *s, va_list list)
 {
-	int *indices, size, i, j;
-	char *string;
-
-	spec spec_array[4] = {{'d', print_int, 0},
+	int *indices, i, j;
+	
+	spec_array[4] = {{'d', print_int, 0},
 			{'i', print_int, 1},
 			{'c', print_char, 2},
 			{'s', print_string, 3}};
