@@ -16,7 +16,8 @@ int print_char(va_list list)
 
 	count = 0;
 	c = va_arg(list, int);
-	count = write(1, &c, 1);
+	count = 1;
+	putchar(c);
 	return (count);
 }
 /**
