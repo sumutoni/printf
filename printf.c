@@ -9,9 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	char *s;
 	va_list list;
-	int counter = 0;
 
 	va_start(list, format);
 	replace(format, list);
