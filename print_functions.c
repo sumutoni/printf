@@ -50,7 +50,7 @@ int print_string(va_list list)
 	if (!string)
 	{
 		string = "null";
-		count = write(1, "", 1);
+		count = write(1, " ", 1);
 	}
 	else
 	{
