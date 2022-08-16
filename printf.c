@@ -10,9 +10,12 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
+	int i, count;
 
+	i = 0;
+	count = 0;
 	va_start(list, format);
-	replace(format, list);
+	count = replace(format, list);
 	va_end(list);
-	return (0);
+	return (count);
 }

@@ -24,10 +24,12 @@ int get_size(const char *s)
  * replace - replace specifier by its corresponding value
  * @s: string with specifier
  * @list: lsit containing arguments
+ *
+ * Return: number of characters printed
  */
-void replace(const char *s, va_list list)
+int replace(const char *s, va_list list)
 {
-	int *indices, i, j;
+	int indices[3], i, j, count;
 
 	spec spec_array[4] = {{'d', print_int, 0},
 			{'i', print_int, 1},
@@ -36,21 +38,28 @@ void replace(const char *s, va_list list)
 
 	i = 0;
 	j = 0;
-	indices = search(s);
-	while (s[i] != '\0')
+	count = 0;
+	search(s, indices);
+	if (indices[2] == 0)
 	{
-		if (i != indices[0])
+		while (s[i] != '\0')
 		{
 			putchar(s[i]);
 		}
-		if (i == indices[0])
-		{
-			j = indices[1];
-			spec_array[j].point(list);
-		}
-		i += 1;
-		indices = search((s + i));
 	}
-	if (s[i] == '\0')
-	putchar('\n');
+	else
+	{
+		while (s[i] != '\0')
+		{
+			if (i != indices[0] && i != indices[1])
+				putchar(s[i]);
+			if (i == indices[0])
+			{
+				j = check_specifier(s[i + 1]);
+				count = spec_array[j].point(list);
+			}
+			i++;
+		}
+	}
+	return (count);
 }

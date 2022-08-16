@@ -28,18 +28,15 @@ int check_specifier(char c)
 /**
  * search - search through string for specifier
  * @s: string to search through
+ * @index: array to store position of specifier
  *
  * Return: pointer to array containing indices of specifer
  */
-int *search(const char *s)
+void *search(const char *s, int *index)
 {
-	int *index;
 	int counter, i;
 
 	i = 0;
-	index = malloc(3 * sizeof(int));
-	if (!index)
-		return (NULL);
 	counter = 0;
 	while (s[i] != '\0')
 	{
@@ -56,5 +53,4 @@ int *search(const char *s)
 		i++;
 	}
 	index[2] = counter;
-	return (index);
 }

@@ -16,8 +16,8 @@ typedef struct specifier
 	int index;
 } spec;
 int _printf(const char *format, ...);
-int *search(const char *);
-void replace(const char *, va_list);
+void *search(const char *, int *);
+int replace(const char *, va_list);
 int check_specifier(char c);
 int print_int(va_list);
 int print_char(va_list);
