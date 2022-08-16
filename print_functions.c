@@ -54,11 +54,11 @@ int print_string(va_list list)
 	}
 	else
 	{
+		count = strlen(string);
 		while (*string != '\0')
 		{
 			putchar(*string);
 			string++;
-			count++;
 		}
 	}
 	return (count);
