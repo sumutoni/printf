@@ -17,7 +17,6 @@ int print_char(va_list list)
 	count = 0;
 	c = va_arg(list, int);
 	count = write(1, &c, 1);
-	printf("%d", count);
 	return (count);
 }
 /**
@@ -33,7 +32,6 @@ int print_int(va_list list)
 
 	c = va_arg(list, int);
 	count = write(1, &c, 2);
-	printf("%d", count);
 	return (count);
 }
 /**
@@ -54,7 +52,6 @@ int print_string(va_list list)
 		count = write(1, string, 5);
 	}
 	else
-		count = write(1, string, sizeof(string));
-	printf("%d", count);
+		count = write(1, string, sizeof(string);
 	return (count);
 }
