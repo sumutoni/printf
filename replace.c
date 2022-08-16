@@ -54,11 +54,14 @@ int replace(const char *s, va_list list)
 		while (s[i] != '\0')
 		{
 			if (i != indices[0] && i != indices[1])
+			{
 				putchar(s[i]);
+				count++;
+			}
 			if (i == indices[0])
 			{
 				j = check_specifier(s[i + 1]);
-				count = spec_array[j].point(list);
+				count += spec_array[j].point(list);
 			}
 			i++;
 		}
