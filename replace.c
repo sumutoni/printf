@@ -45,6 +45,7 @@ int replace(const char *s, va_list list)
 		while (s[i] != '\0')
 		{
 			putchar(s[i]);
+			i++;
 		}
 	}
 	else
