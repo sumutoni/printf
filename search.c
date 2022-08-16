@@ -32,7 +32,7 @@ int check_specifier(char c)
  *
  * Return: pointer to array containing indices of specifer
  */
-void *search(const char *s, int *index)
+void search(const char *s, int *index)
 {
 	int counter, i;
 
