@@ -53,6 +53,13 @@ int print_string(va_list list)
 		count = write(1, string, 5);
 	}
 	else
-		count = write(1, string, strlen(string));
+	{
+		while (*string != '\0')
+		{
+			putchar(*string);
+			string++;
+			count++;
+		}
+	}
 	return (count);
 }
