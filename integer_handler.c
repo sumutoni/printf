@@ -4,6 +4,25 @@
 #include <stdio.h>
 
 /**
+ * check_negative - checks if num is negative
+ * @i: integer
+ *
+ * Return: that integer
+ */
+int check_negative(int i)
+{
+	int num;
+
+	if (i < 0)
+	{
+		putchar('-');
+		num = -i;
+	}
+	else
+		num = i;
+	return (num);
+}
+/**
  * print_num - prints an intger
  * @i: integer to print
  *
@@ -14,7 +33,7 @@ int print_num(int i)
 	int count, num;
 
 	count = 0;
-	num = i;
+	num = check_negative(i);
 	if (i == 0)
 		return (0);
 	count += print_num(num / 10);
