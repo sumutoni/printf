@@ -66,5 +66,5 @@ int replace(const char *s, va_list list)
 			i++;
 		}
 	}
-	return (count - 1);
+	return (count);
 }
