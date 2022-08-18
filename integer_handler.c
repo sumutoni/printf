@@ -18,6 +18,33 @@ int check_negative(int i)
 	return (0);
 }
 /**
+ * count_digits - counts how many digits are in number
+ * @i: number
+ *
+ * Return: number of digits
+ */
+int count_digits(int i)
+{
+	int count, num;
+
+	count = 0;
+	if (i < 0)
+		num = -i;
+	else
+		num = i;
+	if (num == 0)
+		count++;
+	else
+	{
+		while (num != 0)
+		{
+			num = num / 10;
+			count++;
+		}
+	}
+	return (count);
+}
+/**
  * print_num - prints an intger
  * @i: integer to print
  *
@@ -25,7 +52,7 @@ int check_negative(int i)
  */
 int print_num(int i)
 {
-	int count, num;
+	int count, num, digits;
 
 	count = 0;
 	if (check_negative(i))
@@ -42,4 +69,14 @@ int print_num(int i)
 	putchar((num % 10) + '0');
 	count++;
 	return (count);
+}
+/**
+ * print_zero - prints zero
+ *
+ * Return: 1
+ */
+int print_zero(void)
+{
+	putchar('0');
+	return (1);
 }

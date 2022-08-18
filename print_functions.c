@@ -32,7 +32,10 @@ int print_int(va_list list)
 	int count;
 
 	c = va_arg(list, int);
-	count = print_num(c);
+	if (c == 0)
+		count = print_zero();
+	else
+		count = print_num(c);
 	return (count);
 }
 /**
