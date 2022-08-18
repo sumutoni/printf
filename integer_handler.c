@@ -25,7 +25,7 @@ int check_negative(int i)
  */
 int print_num(int i)
 {
-	int count, num;
+	unsigned int count, num;
 
 	count = 0;
 	if (check_negative(i))
