@@ -22,5 +22,6 @@ int check_specifier(char c);
 int print_int(va_list);
 int print_char(va_list);
 int print_string(va_list);
+int print_num(int i);
 
 #endif

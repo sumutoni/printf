@@ -32,7 +32,7 @@ int print_int(va_list list)
 	int count;
 
 	c = va_arg(list, int);
-	count = write(1, &c, 2);
+	count = print_num(c);
 	return (count);
 }
 /**
