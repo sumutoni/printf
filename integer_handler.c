@@ -11,16 +11,11 @@
  */
 int check_negative(int i)
 {
-	int num;
-
 	if (i < 0)
 	{
-		putchar('-');
-		num = -i;
+		return (1);
 	}
-	else
-		num = i;
-	return (num);
+	return (0);
 }
 /**
  * print_num - prints an intger
@@ -33,7 +28,14 @@ int print_num(int i)
 	int count, num;
 
 	count = 0;
-	num = check_negative(i);
+	if (check_negative(i))
+	{
+		putchar('-');
+		count++;
+		num = -i;
+	}
+	else
+		num = i;
 	if (i == 0)
 		return (0);
 	count += print_num(num / 10);
